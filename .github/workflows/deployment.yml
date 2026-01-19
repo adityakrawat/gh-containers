@@ -14,14 +14,14 @@ jobs:
         container:
             image: node:20
         env:
-            MONGODB_CONNECTION_PROTOCOL: mongodb+srv
+            MONGODB_CONNECTION_PROTOCOL: mongodb
             MONGODB_CLUSTER_ADDRESS: mongodb
             MONGODB_USERNAME: root
             MONGODB_PASSWORD: example
             PORT: 3000            
         services:
           mongodb:
-            image: mongo:6.0
+            image: mongo
             ports:
               - 27017:27017
             env:
