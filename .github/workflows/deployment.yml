@@ -13,18 +13,18 @@ jobs:
         runs-on: ubuntu-latest
         container:
             image: node:20
+        env:
+            MONGODB_CONNECTION_PROTOCOL: mongodb+srv
+            MONGODB_CLUSTER_ADDRESS: mongodb
+            MONGODB_USERNAME: root
+            MONGODB_PASSWORD: example
+            PORT: 3000            
         services:
           mongodb:
             image: mongo
             env:
               MONGO_INITDB_ROOT_USERNAME: root
               MONGO_INITDB_ROOT_PASSWORD: example
-        env:
-            MONGODB_CONNECTION_PROTOCOL: mongodb+srv
-            MONGODB_CLUSTER_ADDRESS: mongo
-            MONGODB_USERNAME: root
-            MONGODB_PASSWORD: example
-            PORT: 3000
         steps:
             - name: Checkout code
               uses: actions/checkout@v6
